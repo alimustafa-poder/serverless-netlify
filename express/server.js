@@ -9,6 +9,7 @@ const app = express();
 const router = express.Router();
 
 app.use(router);
+app.use("/.netlify/functions/bundle", router); // path must route to lambda
 router.use(morgan("dev"));
 
 router.get("/", (req, res) => {
